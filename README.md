@@ -1,0 +1,1 @@
+# odoo-school-lesson2-library
