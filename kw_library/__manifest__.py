@@ -21,6 +21,7 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/book.xml',
+        'views/author.xml',
     ],
     'demo': [
     ],

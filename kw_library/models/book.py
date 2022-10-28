@@ -13,3 +13,6 @@ class Book(models.Model):
     active = fields.Boolean(
         default=True, )
     isbn = fields.Char()
+
+    author_ids = fields.Many2many(
+        comodel_name='kw.lib.author',    )
