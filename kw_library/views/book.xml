@@ -31,7 +31,7 @@
         <field name="name">Book</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">kw.lib.book</field>
-        <field name="view_mode">tree, form</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="kw_lib_book_menu"
