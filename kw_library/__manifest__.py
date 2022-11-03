@@ -21,6 +21,7 @@
         'views/menu.xml',
         'views/book.xml',
         'views/author.xml',
+        'views/category.xml',
     ],
     'demo': [
     ],
