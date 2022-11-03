@@ -5,7 +5,8 @@
         <field name="model">kw.lib.book</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="complete_name"/>
+                <!--<field name="complete_name"/>-->
+                <field name="name"/>
             </tree>
         </field>
     </record>
@@ -20,6 +21,9 @@
                     <group>
                         <field name="name"/>
                         <field name="parent_id"/>
+                        <field name="parent_path"/>
+                        <field name="child_id" widget="many2many_tags"/>
+                        <field name="book_count"/>
                     </group>
                 </sheet>
             </form>
@@ -35,7 +39,7 @@
 
     <menuitem id="kw_lib_book_category_menu"
               action="kw_lib_book_category_act_window"
-              parent="kw_lib_book_category_menu"
+              parent="kw_lib_catalog_menu"
               name="Category"
               sequence="200"/>
 
