@@ -17,7 +17,7 @@ class Book(models.Model):
     author_ids = fields.Many2many(
         comodel_name='kw.lib.author',    )
 
-    category_id = fields.Many2many(
+    category_id = fields.Many2one(
         comodel_name='kw.lib.book.category', )
 
     

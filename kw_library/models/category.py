@@ -20,7 +20,7 @@ class BookCategory(models.Model):
     parent_path = fields.Char(index=True)
     child_id = fields.One2many('kw.lib.book.category', 'parent_id', 'Child Categories')
     book_count = fields.Integer(
-        compute='_compute_product_count',)
+        compute='_compute_book_count',)
 
     @api.depends('name', 'parent_id.complete_name')
     def _compute_complete_name(self):
@@ -32,20 +32,24 @@ class BookCategory(models.Model):
 
     def _compute_book_count(self):
         for obj in self:
-            categ.product_count = self.env['kv.lib.book'].search_count([
-                ('category_id', 'child_of', obj.id)])
+            obj.book_count = 77
+            # obj.book_count = 0
+            # y = self.env['kv.lib.book']
+            # x = y.search_count([
+            #     ('category_id', 'child_of', obj.id)])
+            # obj.book_count = x
 
     @api.constrains('parent_id')
     def _check_category_recursion(self):
         if not self._check_recursion():
             raise ValidationError(_('You cannot create recursive categories.'))
 
-    @api.ondelete(at_uninstall=False)
-    def _unlink_except_default_category(self):
-        main_category = self.env.ref('product.product_category_all')
-        if main_category in self:
-            raise UserError(_("You cannot delete this product category, it is the default generic category."))
-        expense_category = self.env.ref('product.cat_expense')
-        if expense_category in self:
-            raise UserError(_("You cannot delete the %s product category.", expense_category.name))
+    # @api.ondelete(at_uninstall=False)
+    # def _unlink_except_default_category(self):
+    #     main_category = self.env.ref('product.product_category_all')
+    #     if main_category in self:
+    #         raise UserError(_("You cannot delete this product category, it is the default generic category."))
+    #     expense_category = self.env.ref('product.cat_expense')
+    #     if expense_category in self:
+    #         raise UserError(_("You cannot delete the %s product category.", expense_category.name))
 
