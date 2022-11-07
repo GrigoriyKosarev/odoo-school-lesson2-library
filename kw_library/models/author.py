@@ -8,7 +8,8 @@ class Author(models.Model):
     _name = 'kw.lib.author'
     _description = 'Author'
 
-    name = fields.Char()
+    name = fields.Char(
+        required=True, )
 
     active = fields.Boolean(
-        default=True,  )
+        default=True, )

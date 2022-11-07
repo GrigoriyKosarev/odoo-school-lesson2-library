@@ -2,11 +2,11 @@
 <odoo>
     <record id="kw_lib_book_category_tree" model="ir.ui.view">
         <field name="name">kw.lib.book.tree (kw_library)</field>
-        <field name="model">kw.lib.book</field>
+        <field name="model">kw.lib.book.category</field>
         <field name="arch" type="xml">
             <tree>
-                <!--<field name="complete_name"/>-->
                 <field name="name"/>
+                <field name="complete_name"/>
                 <field name="book_count"/>
             </tree>
         </field>

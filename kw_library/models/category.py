@@ -34,7 +34,7 @@ class BookCategory(models.Model):
         for obj in self:
             obj.book_count = 77
             # obj.book_count = 0
-            # y = self.env['kv.lib.book']
+            # y = self.env['kv.lib.book.category']
             # x = y.search_count([
             #     ('category_id', 'child_of', obj.id)])
             # obj.book_count = x
