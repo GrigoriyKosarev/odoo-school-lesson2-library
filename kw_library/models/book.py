@@ -15,7 +15,7 @@ class Book(models.Model):
     isbn = fields.Char()
 
     author_ids = fields.Many2many(
-        comodel_name='kw.lib.author',    )
+        comodel_name='kw.lib.author', )
 
     category_id = fields.Many2one(
         comodel_name='kw.lib.book.category', )

@@ -7,6 +7,7 @@
             <tree>
                 <!--<field name="complete_name"/>-->
                 <field name="name"/>
+                <field name="book_count"/>
             </tree>
         </field>
     </record>
@@ -20,6 +21,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="complete_name"/>
                         <field name="parent_id"/>
                         <field name="parent_path"/>
                         <field name="child_id" widget="many2many_tags"/>
